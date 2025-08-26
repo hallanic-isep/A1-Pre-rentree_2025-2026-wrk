@@ -1,3 +1,5 @@
+#Version pour les tests...
+
 # La cible
 import random
 
