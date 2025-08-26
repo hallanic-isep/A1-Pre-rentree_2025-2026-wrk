@@ -1,5 +1,19 @@
 # La cible
 import random
+
+
+def verifie(cible, essai):
+    if cible == essai:
+        print("Bravo !!!")
+        return 0
+    elif cible < essai:
+        print("Trop élevé...")
+        return 1
+    else:
+        print("Trop peu...")
+        return -1
+
+
 prix_a_trouver = random.randint(1,10)
 #print(f"Prix à trouver : {prix_a_trouver}")
 
@@ -16,12 +30,11 @@ for i in range(1, 6):
         continue
 
     # La comparaison
-    if prix_a_trouver == essai :
-        print("Bravo !")
-        break
-    elif prix_a_trouver < essai :
-        print("Trop élévé...")
-    else:
-        print("Trop peu...")
+    if verifie(prix_a_trouver, essai) == 0:
+            # Force la fin de la boucle
+            break
+
+if essai != prix_a_trouver:
+    print("Perdu...")
 
 print("Fin...")
